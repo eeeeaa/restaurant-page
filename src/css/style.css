@@ -1,0 +1,86 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    color: #f9fafb;
+    --menu-bar-color: #1f2937;
+    --content-color:#1f2937;
+    --footer-color: #1f2937;
+}
+
+html,
+body {
+    display: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    min-height: 100vh;
+    display: grid;
+    grid-template: auto 1fr auto/auto;
+    background: linear-gradient(-45deg, #030712, #111827)
+}
+
+.menu-bar {
+    display: grid;
+    grid-template: auto/1fr 1fr;
+    align-items: center;
+    padding: 2em;
+    background-color: var(--menu-bar-color);
+}
+
+.menu-bar .menu-logo {
+    grid-area: 1/1/-1/2;
+    justify-self: left;
+}
+
+.menu-bar .right-menu {
+    grid-area: 1/2/-1/-1;
+    justify-self: right;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.page-content-container {
+    justify-self: center;
+    align-self: center;
+
+    display: flex;
+    max-width: 50%;
+    min-width: 500px;
+    padding: 2em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    background-color: var(--content-color);
+    border-radius: 2em;
+    border-color: transparent;
+}
+
+.page-content-container .restaurant-image {
+    width: 500px;
+    height: 500px;
+    background: url("../assets/img/restaurant.jpg");
+    border: 1px solid #4b5563;
+    border-radius: 2em;
+}
+
+.page-content-container .headline {
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.page-content-container .description {
+    font-style: italic;
+    font-weight: 600;
+}
+
+.footer {
+    padding: 1em;
+    background-color: var(--footer-color);
+    color: #6b7280;
+    font-style: italic;
+    font-weight: 300;
+}
