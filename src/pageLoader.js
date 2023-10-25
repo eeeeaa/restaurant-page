@@ -1,14 +1,21 @@
-export function pageLoader(pageContent){
+export function initialPageLoader(pageContent){
     const content = document.querySelector("#content");
+
+    const container = document.createElement("div");
+    container.classList.add("main-content-container");
+    container.appendChild(pageContent);
+    
+    container.appendChild(pageContent);
     content.appendChild(createMenuBar().menuBar);
-    content.appendChild(pageContent);
+    content.appendChild(container);
     content.appendChild(createFooter().footer);
 }
 
+const menuList = [
+    "Home", "About"
+];
+
 function createMenuBar(){
-    const menuList = [
-        "Home", "About"
-    ];
     
     const logo = document.createElement("div");
     logo.classList.add("menu-logo");
@@ -20,6 +27,7 @@ function createMenuBar(){
     for(let i = 0; i < menuList.length; i++){
         const item = document.createElement("div");
         item.classList.add("menu-item");
+        item.setAttribute("data-menu-type", menuList[i]);
         item.textContent = menuList[i];
 
         rightMenu.appendChild(item);
